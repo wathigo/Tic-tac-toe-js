@@ -1,38 +1,85 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="icon"
-      type="image/png"
-      href="images/tic.png">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-  </head>
-  <body onload="render()">
 
-    <div class="gameboard">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="icon" type="image/png" href="images/tic.png">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
 
-      <div class="boardbox"></div>
-      <div class="boardbox"></div>
-      <div class="boardbox"></div>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Abel|Lobster&display=swap" rel="stylesheet">
+</head>
 
-      <div class="boardbox"></div>
-      <div class="boardbox"></div>
-      <div class="boardbox"></div>
+<body onload="render()">
 
-      <div class="boardbox"></div>
-      <div class="boardbox"></div>
-      <div class="boardbox"></div>
+
+  <div class="gamestarter">
+    <div class="playerforms d-flex d-col">
+
+      <div class="playerform">
+        <form action="#">
+          Name Player X:<br>
+          <input type="text" name="firstname" value="" class="playerX">
+          <br>
+          Mark:<br>
+          X <br>
+
+        </form>
+      </div>
+
+      <div class="playerform">
+        <form action="#">
+          Name Player O:<br>
+          <input type="text" name="firstname" value="", class="playerO">
+          <br>
+          Mark:<br>
+          O <br>
+
+        </form>
+      </div>
+
+
 
     </div>
 
-    <script src="./js/script.js"></script>
-    <!-- <script src="./js/display_controller.js" type="module"></script>
+    <input type="submit" value="Submit" onclick = "createPlayers()">
+  </div>
+
+
+  <div class="gameboard d-flex flex-row">
+
+    <div class="boardrow">
+      <div class="boardbox"></div>
+      <div class="boardbox"></div>
+      <div class="boardbox"></div>
+    </div>
+
+    <div class="boardrow">
+      <div class="boardbox"></div>
+      <div class="boardbox"></div>
+      <div class="boardbox"></div>
+    </div>
+
+    <div class="boardrow">
+      <div class="boardbox"></div>
+      <div class="boardbox"></div>
+      <div class="boardbox"></div>
+    </div>
+
+  </div>
+
+  <script src="./js/script.js"></script>
+  <!-- <script src="./js/display_controller.js" type="module"></script>
     <script src="./js/game_board.js" type="module"></script>
     <script src="./js/player.js" type="module"></script> -->
 
 
 
 
-  </body>
+</body>
+
 </html>

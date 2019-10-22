@@ -1,0 +1,18 @@
+/* Players form */
+
+.playerform{
+
+    margin: 1rem;
+}
+
+
+/* GameBoard */
+
+.boardbox{
+    border: 1px solid salmon;
+    width: 5rem;
+    height: 5rem;
+}
+
+.boardrow{
+}
