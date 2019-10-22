@@ -1,3 +1,6 @@
+import gameBoard as gboard from './game_board.js';
+import player as ply from './player.js';
+
 const displayController = () => {
   let players;
   const start_game = (player1, player2) => {
