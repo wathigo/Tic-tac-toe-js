@@ -18,11 +18,13 @@ const displayController = (() => {
 
   let players = [];
   let gamestop = ""; 
+  let rolls = 0;
 
   const start_game = (player1, player2) => {
     players[0] = player1;
     players[1] = player2;
     gamestop = false;
+    rolls = 0;
   };
 
   const switch_players = (player1, player2) => {
@@ -35,7 +37,9 @@ const displayController = (() => {
     check_horizontal(board, player)
     check_vertical(board, player)
     check_diagonal(board, player)
-    check_draw(board)
+    rolls += 1 
+    if(rolls == 9){
+    check_draw(board) }
   }
 
   const check_horizontal = (board, player) => {
@@ -64,13 +68,10 @@ const displayController = (() => {
   }
 
   const check_draw = (board) => {
-
-    for(let i = 0; i<=8; i++){
-      if(){
-        console.log("draw")
-        gamestop = true
-      }
-    }
+     if(gamestop == false){
+       console.log("draw!")
+       gamestop = true;
+     }
 
   }
 
