@@ -30,7 +30,7 @@ nav h3 {
   line-height: 8vh;
   margin-left: 2em;
   font-family: 'Lobster', cursive;
-
+  cursor: pointer;
 }
 
 footer {
@@ -105,8 +105,8 @@ select {
 /* GameBoard */
 
 .gameboard{
-
-  margin: 5rem 0 0 35rem;
+  width: 30vw;
+  margin: 5rem auto 0 auto;
 }
 
 .boardbox {
@@ -119,23 +119,24 @@ select {
   display: none;
 }
 
-.errormsg {
+.errormsg, .winmsg {
   visibility: hidden;
   width: 30vw;
   height: 30vh;
   position: absolute;
-  top: 35vh;
-  left: 35vh;
+  top: 10vh;
+  left: 85vh;
   margin: 0;
 }
 
 
 button[type="button"] {
-  width: 60%;
+  width: 15vw;
   background-color: rgba(46, 147, 60, 1);
   color: white;
+  display: block;
   padding: 14px 20px;
-  margin: 8px 0 0 10px;
+  margin: 2vh 0 0 40vw;
   border: none;
   border-radius: 4px;
   cursor: pointer;

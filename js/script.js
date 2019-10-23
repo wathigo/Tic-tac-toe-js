@@ -16,6 +16,9 @@ const gameBoard = (() => {
   }
 })();
 
+const reload = () => {
+  location.reload();
+}
 const player = (name, mark) => {
   return { name, mark };
 };
@@ -119,6 +122,11 @@ const updateBox = (box) => {
     gameBoard.addPosition(box.textContent, displayController.players[0].mark)
     console.log(gameBoard.board)
     box.textContent = displayController.players[0].mark;
+    if(box.textContent === 'X'){
+      box.style.background = 'rgba(73, 79, 75, 1)';
+    } else {
+      box.style.background = 'rgba(237, 62, 9, 1)';
+    }
     displayController.switch_players(displayController.players[0], displayController.players[1]);
     console.log(displayController.players)
     displayController.check_winner(gameBoard.board, displayController.players[0]);
@@ -128,6 +136,9 @@ const updateBox = (box) => {
 const newGame = () => {
   document.querySelector('.winmsg').style.visibility = 'hidden';
   gameBoard.board = gameBoard.resetBoard();
+  document.querySelectorAll('.boardbox').forEach(function (box, index){
+    box.style.background = '#fff';
+  })
   render();
 }
 

@@ -17,7 +17,7 @@
 <body onload="render()">
 
   <nav>
-    <h3>Tic-tac-toe</h3>
+    <h3 onclick="reload()">Tic-tac-toe</h3>
   </nav>
 
   <div class="gamestarter">
@@ -69,8 +69,10 @@
       <div class="boardbox"></div>
       <div class="boardbox"></div>
       <div class="boardbox"></div>
-      <button class="button-game" type="button" onclick="newGame()" name="button">new game</button>
     </div>
+  </div>
+  <div class="restart">
+    <button class="button-game" type="button" onclick="newGame()" name="button">new game</button>
   </div>
 
   <div class="errormsg">
