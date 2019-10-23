@@ -111,11 +111,9 @@ const updateBox = (box) => {
   console.log(box.textContent)
   if (box.textContent === "X" || box.textContent === "O") {
     console.log("Not empty!")
-    box.style.background = 'red';
     document.querySelector('.errormsg').style.visibility = 'visible';
     setTimeout(() => {
       document.querySelector('.errormsg').style.visibility = 'hidden';
-      box.style.background = '#fff';
     }, 800);
   } else {
     console.log(displayController.players)
@@ -123,9 +121,9 @@ const updateBox = (box) => {
     console.log(gameBoard.board)
     box.textContent = displayController.players[0].mark;
     if(box.textContent === 'X'){
-      box.style.background = 'rgba(73, 79, 75, 1)';
+      box.style.background = '#F0E68C';
     } else {
-      box.style.background = 'rgba(237, 62, 9, 1)';
+      box.style.background = '#FFFACD';
     }
     displayController.switch_players(displayController.players[0], displayController.players[1]);
     console.log(displayController.players)
