@@ -1,4 +1,7 @@
 /* Players form */
+body {
+  position: relative;
+}
 
 .playerform{
 
@@ -15,4 +18,14 @@
 }
 
 .boardrow{
+}
+
+.errormsg{
+  visibility: hidden;
+  width: 30vw;
+  height: 30vh;
+  position: absolute;
+  top: 35vh;
+  left: 35vh;
+  margin: 0;
 }

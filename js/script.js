@@ -15,24 +15,39 @@ const player = (name, mark) => {
 };
 
 const displayController = (() => {
-  var players = [];
+  let players = [];
   const start_game = (player1, player2) => {
-    var players = [player1, player2];
+    players[0] = player1;
+    players[1] = player2;
   };
 
-  const switch_players = () => {
-    [players[0], players[1]] = [players[1], players[0]];
+  const switch_players = (player1, player2) => {
+    console.log('Switching players');
+    players[0] = player2;
+    players[1] = player1;
   }
 
   return{start_game, switch_players, players};
 })();
 
 const updateBox = (box) => {
-  console.log('click')
-  gameBoard.addPosition(box.textContent, displayController.players[0].mark)
-  console.log(gameBoard.board)
-  box.textContent = 'X'
-  displayController.switch_players();
+  console.log(box.textContent.length)
+  if(box.textContent.length !== 0){
+    console.log("Not empty!")
+    box.style.background = 'red';
+    document.querySelector('.errormsg').style.visibility = 'visible';
+    setTimeout(() => {
+      document.querySelector('.errormsg').style.visibility = 'hidden';
+      box.style.background = '#fff';
+    }, 800);
+  } else {
+    console.log(displayController.players)
+    gameBoard.addPosition(box.textContent, displayController.players[0].mark)
+    console.log(gameBoard.board)
+    box.textContent = displayController.players[0].mark;
+    displayController.switch_players(displayController.players[0], displayController.players[1]);
+    console.log(displayController.players)
+  }
 }
 
 const createPlayers = () =>{
