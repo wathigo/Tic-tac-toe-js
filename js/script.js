@@ -126,13 +126,9 @@ const updateBox = (box) => {
 }
 
 const newGame = () => {
+  document.querySelector('.winmsg').style.visibility = 'hidden';
   gameBoard.board = gameBoard.resetBoard();
   render();
-  // document.querySelectorAll('.boardbox').forEach((box, index) => {
-  //   box.textContent = gameBoard.board[index];
-  // });
-  // startGame();
-  // displayController.rolls = 0;
 }
 
 const createPlayers = () => {
@@ -151,12 +147,11 @@ const startGame = () => {
 }
 
 const render = () => {
-  if(displayController.players === []){
-    createPlayers();
-  }
+  createPlayers();
   document.querySelectorAll('.boardbox').forEach(function (box, index) {
     console.log(box);
     box.textContent = gameBoard.board[index]
+    console.log(box.textContent)
     box.addEventListener('click', (evt) => {
       updateBox(event.target);
     })
