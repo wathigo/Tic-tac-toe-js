@@ -18,6 +18,7 @@ body {
 }
 
 .boardrow{
+  display: none;
 }
 
 .errormsg{

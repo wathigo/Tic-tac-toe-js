@@ -4,9 +4,15 @@ const gameBoard = (() => {
   const addPosition = (position, mark) => {
     board[position - 1] = mark;
   };
+
+  const resetBoard = () => {
+    console.log("board reset")
+    return board = ["1", "4", "7", "2", "5", "8", "3", "6", "9"];
+  }
   return {
     board,
-    addPosition
+    addPosition,
+    resetBoard
   }
 })();
 
@@ -17,7 +23,7 @@ const player = (name, mark) => {
 const displayController = (() => {
 
   let players = [];
-  let gamestop = ""; 
+  let gamestop = "";
   let rolls = 0;
 
   const start_game = (player1, player2) => {
@@ -37,7 +43,7 @@ const displayController = (() => {
     check_horizontal(board, player)
     check_vertical(board, player)
     check_diagonal(board, player)
-    rolls += 1 
+    rolls += 1
     if(rolls == 9){
     check_draw(board) }
   }
@@ -80,9 +86,8 @@ const displayController = (() => {
     document.querySelector('.winmsg b').textContent = `${player.name} won!`
     document.querySelector('.winmsg').style.visibility = 'visible';
     document.querySelectorAll('.boardbox').forEach(function (box, index){
-      box.removeEventListener('click', (evt) => {
-        updateBox(event.target);
-      })
+      let newBox = box.cloneNode(true);
+      box.parentNode.replaceChild(newBox, box);
     })
   }
 
@@ -91,17 +96,16 @@ const displayController = (() => {
     document.querySelector('.winmsg b').textContent = `It's a draw`
     document.querySelector('.winmsg').style.visibility = 'visible';
     document.querySelectorAll('.boardbox').forEach(function (box, index){
-      box.removeEventListener('click', (evt) => {
-        updateBox(event.target);
-      })
+      let newBox = box.cloneNode(true);
+      box.parentNode.replaceChild(newBox, box);
     })
   }
 
-  return { start_game, switch_players, players, check_winner };
+  return { start_game, switch_players, players, check_winner, rolls };
 })();
 
 const updateBox = (box) => {
-  console.log(box.textContent.length)
+  console.log(box.textContent)
   if (box.textContent === "X" || box.textContent === "O") {
     console.log("Not empty!")
     box.style.background = 'red';
@@ -121,6 +125,16 @@ const updateBox = (box) => {
   }
 }
 
+const newGame = () => {
+  gameBoard.board = gameBoard.resetBoard();
+  render();
+  // document.querySelectorAll('.boardbox').forEach((box, index) => {
+  //   box.textContent = gameBoard.board[index];
+  // });
+  // startGame();
+  // displayController.rolls = 0;
+}
+
 const createPlayers = () => {
   const playerO = player(document.querySelector('.playerO').value, "O")
   const playerX = player(document.querySelector('.playerX').value, "X")
@@ -128,9 +142,18 @@ const createPlayers = () => {
 
 }
 
-const render = () => {
-
+const startGame = () => {
   createPlayers();
+  document.querySelectorAll('.boardrow').forEach(row => {
+    row.style.display = 'block';
+  });
+  document.querySelector('.gamestarter').style.display = 'none';
+}
+
+const render = () => {
+  if(displayController.players === []){
+    createPlayers();
+  }
   document.querySelectorAll('.boardbox').forEach(function (box, index) {
     console.log(box);
     box.textContent = gameBoard.board[index]
