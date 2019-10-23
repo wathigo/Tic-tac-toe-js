@@ -151,9 +151,10 @@ const createPlayers = () => {
 
 const startGame = () => {
   createPlayers();
-  document.querySelectorAll('.boardrow').forEach(row => {
-    row.style.display = 'block';
-  });
+  // document.querySelectorAll('.boardrow').forEach(row => {
+  //   row.style.display = 'block';
+  // });
+  document.querySelector('.boardcont').style.display = 'block';
   document.querySelector('.gamestarter').style.display = 'none';
 }
 
