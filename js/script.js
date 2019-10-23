@@ -69,8 +69,8 @@ const displayController = (() => {
 
   const check_draw = (board) => {
      if(gamestop == false){
-       console.log("draw!")
        gamestop = true;
+       draw();
      }
 
   }
@@ -78,6 +78,17 @@ const displayController = (() => {
   const winner = (player) => {
     gamestop = true
     document.querySelector('.winmsg b').textContent = `${player.name} won!`
+    document.querySelector('.winmsg').style.visibility = 'visible';
+    document.querySelectorAll('.boardbox').forEach(function (box, index){
+      box.removeEventListener('click', (evt) => {
+        updateBox(event.target);
+      })
+    })
+  }
+
+  const draw = () => {
+    gamestop = true
+    document.querySelector('.winmsg b').textContent = `It's a draw`
     document.querySelector('.winmsg').style.visibility = 'visible';
     document.querySelectorAll('.boardbox').forEach(function (box, index){
       box.removeEventListener('click', (evt) => {
