@@ -141,20 +141,34 @@ const newGame = () => {
 }
 
 const createPlayers = () => {
-  const playerO = player(document.querySelector('.playerO').value, "O")
-  const playerX = player(document.querySelector('.playerX').value, "X")
-  displayController.start_game(playerO, playerX)
-
+  if(document.querySelector('.playerO').value.length != 0 && document.querySelector('.playerO').value.length != 0){
+    const playerO = player(document.querySelector('.playerO').value, "O")
+    const playerX = player(document.querySelector('.playerX').value, "X")
+    displayController.start_game(playerO, playerX)
+    return true
+  }else{
+    return false 
+  }
 }
 
 const startGame = () => {
-  createPlayers();
-  // document.querySelectorAll('.boardrow').forEach(row => {
+  if(createPlayers()){
+
+    document.querySelector('.boardcont').style.display = 'block';
+    document.querySelector('.gamestarter').style.display = 'none';
+      // document.querySelectorAll('.boardrow').forEach(row => {
   //   row.style.display = 'block';
   // });
-  document.querySelector('.boardcont').style.display = 'block';
-  document.querySelector('.gamestarter').style.display = 'none';
-}
+  }else{
+
+  
+    document.querySelector('.playernames').style.visibility = 'visible';
+    setTimeout(() => {
+      document.querySelector('.playernames').style.visibility = 'hidden';
+    }, 800);
+
+
+} }
 
 const render = () => {
   createPlayers();
