@@ -1,5 +1,5 @@
 /* eslint-env browser */
-/* eslint no-unused-vars: [1, {"argsIgnorePattern": "[newGame|reload|startGame|evt]"}] */
+/* eslint no-unused-vars: [1, {"argsIgnorePattern": "[evt]"}] */
 
 const gameBoard = (() => {
   let board = ['1', '4', '7', '2', '5', '8', '3', '6', '9'];
@@ -183,3 +183,7 @@ const newGame = () => {
   });
   render();
 };
+
+ window.startGame = startGame;
+ window.reload = reload;
+ window.newGame = newGame;
