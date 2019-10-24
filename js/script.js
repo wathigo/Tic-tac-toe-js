@@ -139,16 +139,6 @@ const updateBox = (box) => {
   }
 };
 
-const newGame = () => {
-  document.querySelector('.winmsg').style.visibility = 'hidden';
-  document.querySelector('.winmsg b').textContent = '';
-  gameBoard.board = gameBoard.resetBoard();
-  document.querySelectorAll('.boardbox').forEach((box) => {
-    box.style.background = '#fff';
-  });
-  render();
-};
-
 const createPlayers = () => {
   if (document.querySelector('.playerO').value.length !== 0 && document.querySelector('.playerO').value.length !== 0) {
     const playerO = player(document.querySelector('.playerO').value, 'O');
@@ -182,4 +172,14 @@ const render = () => {
       updateBox(window.event.target);
     });
   });
+};
+
+const newGame = () => {
+  document.querySelector('.winmsg').style.visibility = 'hidden';
+  document.querySelector('.winmsg b').textContent = '';
+  gameBoard.board = gameBoard.resetBoard();
+  document.querySelectorAll('.boardbox').forEach((box) => {
+    box.style.background = '#fff';
+  });
+  render();
 };
