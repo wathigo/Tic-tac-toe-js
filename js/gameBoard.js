@@ -1,4 +1,4 @@
-export const gameBoard = (() => {
+const gameBoard = (() => {
     let board = ['1', '4', '7', '2', '5', '8', '3', '6', '9'];
   
     const addPosition = (position, mark) => {
@@ -15,3 +15,5 @@ export const gameBoard = (() => {
       resetBoard,
     };
   })();
+
+  export default gameBoard;

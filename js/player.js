@@ -1,1 +1,2 @@
-export const player = (name, mark) => ({ name, mark });
+const player = (name, mark) => ({ name, mark });
+export default player;
