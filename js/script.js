@@ -1,13 +1,12 @@
 const gameBoard = (() => {
-  let board = ["1", "4", "7", "2", "5", "8", "3", "6", "9"];
+  let board = ['1', '4', '7', '2', '5', '8', '3', '6', '9'];
 
   const addPosition = (position, mark) => {
     board[position - 1] = mark;
   };
 
   const resetBoard = () => {
-    console.log("board reset")
-    return board = ["1", "4", "7", "2", "5", "8", "3", "6", "9"];
+    return board = ['1', '4', '7', '2', '5', '8', '3', '6', '9'];
   }
   return {
     board,
