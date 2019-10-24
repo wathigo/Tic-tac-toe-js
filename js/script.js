@@ -1,28 +1,13 @@
 /* eslint-env browser */
 /* eslint no-unused-vars: [1, {"argsIgnorePattern": "[evt]"}] */
 
-const gameBoard = (() => {
-  let board = ['1', '4', '7', '2', '5', '8', '3', '6', '9'];
+import * as gameBoard from './gameBoard/index.js';
+import * as player from './player/index.js';
 
-  const addPosition = (position, mark) => {
-    board[position - 1] = mark;
-  };
-
-  const resetBoard = () => {
-    board = ['1', '4', '7', '2', '5', '8', '3', '6', '9'];
-    return board;
-  };
-  return {
-    board,
-    addPosition,
-    resetBoard,
-  };
-})();
 
 const reload = () => {
   window.location.reload();
 };
-const player = (name, mark) => ({ name, mark });
 
 const displayController = (() => {
   const players = [];
@@ -153,9 +138,6 @@ const startGame = () => {
   if (createPlayers()) {
     document.querySelector('.boardcont').style.display = 'block';
     document.querySelector('.gamestarter').style.display = 'none';
-    // document.querySelectorAll('.boardrow').forEach(row => {
-  //   row.style.display = 'block';
-  // });
   } else {
     document.querySelector('.playernames').style.visibility = 'visible';
     setTimeout(() => {

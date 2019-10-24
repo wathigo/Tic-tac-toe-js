@@ -1,0 +1,1 @@
+export const player = (name, mark) => ({ name, mark });
