@@ -6,26 +6,27 @@ const gameBoard = (() => {
   };
 
   const resetBoard = () => {
-    return board = ['1', '4', '7', '2', '5', '8', '3', '6', '9'];
-  }
+     board = ['1', '4', '7', '2', '5', '8', '3', '6', '9'];
+     return board;
+  };
   return {
     board,
     addPosition,
-    resetBoard
-  }
+    resetBoard,
+  };
 })();
 
 const reload = () => {
   location.reload();
-}
+};
 const player = (name, mark) => {
   return { name, mark };
 };
 
 const displayController = (() => {
 
-  let players = [];
-  let gamestop = "";
+  const players = [];
+  let gamestop = '';
   let rolls = 0;
 
   const start_game = (player1, player2) => {
