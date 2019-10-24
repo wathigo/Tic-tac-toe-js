@@ -1,3 +1,5 @@
+/* eslint no-unused-vars: [1, {"argsIgnorePattern": "reload"}] */
+
 const gameBoard = (() => {
   let board = ['1', '4', '7', '2', '5', '8', '3', '6', '9'];
 
