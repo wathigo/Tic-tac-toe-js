@@ -184,6 +184,6 @@ const newGame = () => {
   render();
 };
 
- window.startGame = startGame;
- window.reload = reload;
- window.newGame = newGame;
+window.startGame = startGame;
+window.reload = reload;
+window.newGame = newGame;
