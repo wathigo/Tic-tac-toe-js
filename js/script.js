@@ -20,7 +20,7 @@ const gameBoard = (() => {
 })();
 
 const reload = () => {
-  location.reload();
+  window.location.reload();
 };
 const player = (name, mark) => ({ name, mark });
 
@@ -179,7 +179,7 @@ const render = () => {
   document.querySelectorAll('.boardbox').forEach((box, index) => {
     box.textContent = gameBoard.board[index];
     box.addEventListener('click', (evt) => {
-      updateBox(event.target);
+      updateBox(window.event.target);
     });
   });
 };
