@@ -37,16 +37,14 @@ const displayController = (() => {
   };
 
   const switch_players = (player1, player2) => {
-    console.log('Switching players');
-    console.log(document.querySelector('.errormsg b').textContent);
-    if(document.querySelector('.winmsg b').textContent.length === 0 &&
-        document.querySelector('.errormsg b').textContent.length === 0){
-        document.querySelector('.playersturn').style.visibility = 'visible';
-        document.querySelector('.playersturn').textContent = `${player2.name} turn`;
-        players[0] = player2;
-        players[1] = player1;
-      } else {
-        document.querySelector('.playersturn').style.visibility = 'hidden';
+    if(document.querySelector('.winmsg b').textContent.length === 0 
+          && document.querySelector('.errormsg b').textContent.length === 0){
+      document.querySelector('.playersturn').style.visibility = 'visible';
+      document.querySelector('.playersturn').textContent = `${player2.name} turn`;
+      players[0] = player2;
+      players[1] = player1;
+    } else {
+      document.querySelector('.playersturn').style.visibility = 'hidden';
       }
 
   }
