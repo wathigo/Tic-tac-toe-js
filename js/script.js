@@ -1,8 +1,8 @@
 /* eslint-env browser */
 /* eslint no-unused-vars: [1, {"argsIgnorePattern": "[evt]"}] */
 
-import * as gameBoard from './gameBoard/index.js';
-import * as player from './player/index.js';
+import * as gameBoard from './gameBoard.js';
+import * as player from './player.js';
 
 
 const reload = () => {
