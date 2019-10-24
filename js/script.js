@@ -38,8 +38,17 @@ const displayController = (() => {
 
   const switch_players = (player1, player2) => {
     console.log('Switching players');
-    players[0] = player2;
-    players[1] = player1;
+    console.log(document.querySelector('.errormsg b').textContent);
+    if(document.querySelector('.winmsg b').textContent.length === 0 &&
+        document.querySelector('.errormsg b').textContent.length === 0){
+        document.querySelector('.playersturn').style.visibility = 'visible';
+        document.querySelector('.playersturn').textContent = `${player2.name} turn`;
+        players[0] = player2;
+        players[1] = player1;
+      } else {
+        document.querySelector('.playersturn').style.visibility = 'hidden';
+      }
+
   }
 
   const check_winner = (board, player) => {
@@ -111,9 +120,13 @@ const updateBox = (box) => {
   console.log(box.textContent)
   if (box.textContent === "X" || box.textContent === "O") {
     console.log("Not empty!")
+    document.querySelector('.playersturn').style.visibility = 'hidden';
     document.querySelector('.errormsg').style.visibility = 'visible';
+    document.querySelector('.errormsg b').textContent = 'Invalid move!';
     setTimeout(() => {
       document.querySelector('.errormsg').style.visibility = 'hidden';
+      document.querySelector('.errormsg b').textContent = '';
+      document.querySelector('.playersturn').style.visibility = 'visible';
     }, 800);
   } else {
     console.log(displayController.players)
@@ -125,14 +138,15 @@ const updateBox = (box) => {
     } else {
       box.style.background = '#FFFACD';
     }
-    displayController.switch_players(displayController.players[0], displayController.players[1]);
     console.log(displayController.players)
     displayController.check_winner(gameBoard.board, displayController.players[0]);
+    displayController.switch_players(displayController.players[0], displayController.players[1]);
   }
 }
 
 const newGame = () => {
   document.querySelector('.winmsg').style.visibility = 'hidden';
+  document.querySelector('.winmsg b').textContent = '';
   gameBoard.board = gameBoard.resetBoard();
   document.querySelectorAll('.boardbox').forEach(function (box, index){
     box.style.background = '#fff';
@@ -147,7 +161,7 @@ const createPlayers = () => {
     displayController.start_game(playerO, playerX)
     return true
   }else{
-    return false 
+    return false
   }
 }
 
@@ -161,7 +175,7 @@ const startGame = () => {
   // });
   }else{
 
-  
+
     document.querySelector('.playernames').style.visibility = 'visible';
     setTimeout(() => {
       document.querySelector('.playernames').style.visibility = 'hidden';

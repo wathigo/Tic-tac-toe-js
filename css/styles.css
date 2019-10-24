@@ -9,7 +9,7 @@ background: rgba(237, 62, 9, 1);
 background: rgba(129, 193, 75, 1);
 color: rgba(46, 147, 60, 1);
 color: rgba(41, 112, 69, 1);
-color: rgba(73, 79, 75, 1); 
+color: rgba(73, 79, 75, 1);
 } */
 
 /* Players form */
@@ -199,4 +199,18 @@ button[type="button"]:hover {
 
   margin: 1rem 0 0 28rem;
   font-size: 1.2rem;
+}
+
+.playersturn{
+  visibility: hidden;
+  position: absolute;
+  top: 13vh;
+  left: 4vw;
+  font-size: 3rem;
+  vertical-align:middle;
+  width: 90%;
+  height: 10%;
+  font-family: 'Permanent Marker', cursive;
+  text-align: center;
+  color:   #9B870C;
 }
