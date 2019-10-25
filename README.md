@@ -1,6 +1,6 @@
 <br />
 <p align="center">
-  <a href="https://rawcdn.githack.com/samgaco/library/3ab24e6bc842e407b52aaebed65fa6e62b3ca2d4/index.html">
+  <a href="https://rawcdn.githack.com/wathigo/Tic-tac-toe-js/655a9d9eb9f1df552646d31cc8ac709bcdcb9a86/index.html">
     <img src="images/logo.png" alt="Logo">
   </a>
 
@@ -10,7 +10,7 @@
     JavaScript Project
     <br />
     <br />
-    <a href="#">View Demo</a>
+    <a href="https://rawcdn.githack.com/wathigo/Tic-tac-toe-js/655a9d9eb9f1df552646d31cc8ac709bcdcb9a86/index.html">View Demo</a>
     ·
     <a href="https://github.com/wathigo/Tic-tac-toe-js/issues">Report Bug</a>
     ·
