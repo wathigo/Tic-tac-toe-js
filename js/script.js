@@ -2,7 +2,7 @@
 /* eslint no-unused-vars: [1, {"argsIgnorePattern": "[evt]"}] */
 
 
-const reload = () => {
+const reload = () => {  /* eslint-disable-line no-unused-vars */
   window.location.reload();
 };
 
@@ -131,7 +131,7 @@ const createPlayers = () => {
   return false;
 };
 
-const startGame = () => {
+const startGame = () => {  /* eslint-disable-line no-unused-vars */
   if (createPlayers()) {
     document.querySelector('.boardcont').style.display = 'block';
     document.querySelector('.gamestarter').style.display = 'none';
@@ -153,7 +153,7 @@ const render = () => {
   });
 };
 
-const newGame = () => {
+const newGame = () => {   /* eslint-disable-line no-unused-vars */
   document.querySelector('.winmsg').style.visibility = 'hidden';
   document.querySelector('.winmsg b').textContent = '';
   gameBoard.board = gameBoard.resetBoard();
