@@ -1,9 +1,6 @@
 /* eslint-env browser */
 /* eslint no-unused-vars: [1, {"argsIgnorePattern": "[evt]"}] */
 
-import * as gameBoard from './gameBoard';
-import * as player from './player';
-
 
 const reload = () => {
   window.location.reload();
@@ -165,7 +162,3 @@ const newGame = () => {
   });
   render();
 };
-
-window.startGame = startGame;
-window.reload = reload;
-window.newGame = newGame;

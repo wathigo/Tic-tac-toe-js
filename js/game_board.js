@@ -14,5 +14,3 @@ const gameBoard = (() => {
     resetBoard,
   };
 })();
-
-export default gameBoard;
