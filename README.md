@@ -10,7 +10,7 @@
     JavaScript Project
     <br />
     <br />
-    <a href="https://rawcdn.githack.com/wathigo/Tic-tac-toe-js/655a9d9eb9f1df552646d31cc8ac709bcdcb9a86/index.html">View Demo</a>
+    <a href="https://raw.githack.com/wathigo/Tic-tac-toe-js/master/index.html">View Demo</a>
     ·
     <a href="https://github.com/wathigo/Tic-tac-toe-js/issues">Report Bug</a>
     ·
